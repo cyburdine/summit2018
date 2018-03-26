@@ -1,0 +1,8 @@
+---
+# This playbook deploys two simple applications to JBoss server. 
+- name: Deploy web application
+  hosts: tag_type_app
+  become: true
+
+  roles:
+    - java-app-install

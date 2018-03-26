@@ -1,0 +1,8 @@
+---
+# This playbook un-deploys two Ticket Monster and Hello World applications to JBoss server. 
+- name: Remove web application
+  hosts: tag_type_app
+  become: true
+
+  roles:
+    - java-app-uninstall

@@ -1,0 +1,30 @@
+---
+- name: Disable JBoss
+  shell: service jboss stop && chkconfig jboss off
+
+- name: Verify JBoss is down
+  service: name=jboss enabled=no state=stopped
+
+- name: Remove the JBoss init script
+  shell: /bin/rm -rf /etc/init.d/jboss
+
+- name: Remove JBoss installation
+  shell: /bin/rm -rf /usr/share/jboss-as
+
+- name: Remove user "jboss"
+  user:
+    name: jboss
+    state: absent
+
+- name: Remove group "jboss"
+  group:
+    name: jboss
+    state: absent
+
+- name: Remove Java 1.7 and some basic dependencies
+  yum: name={{item}} state=absent
+  with_items:
+   - unzip
+   - java-1.7.0-openjdk
+   - libselinux-python
+   - libsemanage-python
