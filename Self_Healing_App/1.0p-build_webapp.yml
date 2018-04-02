@@ -10,7 +10,7 @@
     keypair:  "{{ ec2_keypair_name | default('summit-root') }}"
     set_dns:  False
     count: 2
-    vpc_subnet: "subnet-bc76f4db"
+    vpc_subnet: "subnet-23ec8c78"
     tags:
       env:  "{{ tags_env  | default('prod') }}"
       type: "{{ tags_type | default('app') }}"
