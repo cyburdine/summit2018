@@ -7,11 +7,11 @@
   vars:
     region:   us-west-1
     ami: ami-01b0e074974547d44
-    keypair:  "{{ ec2_keypair_name | default('summit-root') }}"
+    keypair:  summit-root
     set_dns:  False
-    count: 2
-    vpc_subnet: "subnet-23ec8c78"
+    vpc_subnet: subnet-23ec8c78
     tags:
+      name: "{{ instance_name }}"
       env:  "{{ tags_env  | default('prod') }}"
       type: "{{ tags_type | default('app') }}"
     wait_for_ssh: False
@@ -28,6 +28,7 @@
         vpc_subnet_id: "{{ vpc_subnet }}"
         region: "{{ region }}"
         assign_public_ip: yes
+        instance_tags: "{{ tags }}"
       register: ec2
 
     - name: Wait for SSH to come up
