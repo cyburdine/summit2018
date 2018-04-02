@@ -11,7 +11,7 @@
     set_dns:  False
     vpc_subnet: subnet-23ec8c78
     tags:
-      name: "{{ instance_name }}"
+      name: "{{ ansible_hostname }}"
       env:  "{{ tags_env  | default('prod') }}"
       type: "{{ tags_type | default('app') }}"
     wait_for_ssh: False
