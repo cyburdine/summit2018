@@ -23,7 +23,7 @@
         instance_type: t2.micro
         image: "{{ ami }}"
         wait: yes
-        group: webserver
+        group: Web Servers
         count: 2
         vpc_subnet_id: "{{ vpc_subnet }}"
         region: "{{ region }}"
