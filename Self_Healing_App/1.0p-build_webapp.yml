@@ -26,6 +26,7 @@
         group: webserver
         count: 2
         vpc_subnet_id: "{{ vpc_subnet }}"
+        region: "{{ region }}"
         assign_public_ip: yes
       register: ec2
       # local_action:
