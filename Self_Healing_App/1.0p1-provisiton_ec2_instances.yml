@@ -17,4 +17,4 @@
     wait_for_ssh: False
 
   roles:
-    - 1.0p1-provisiton_ec2_instances
+  - 1.0p1-provisiton_ec2_instances
