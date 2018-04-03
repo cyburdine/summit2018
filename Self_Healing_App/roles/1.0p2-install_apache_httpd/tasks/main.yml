@@ -1,5 +1,47 @@
 ---
+- name: display ip address
+  debug: var="{{ ansible_host }}"
+
 - name: Install Apache httpd
   yum:
     name: httpd
     state: latest
+
+- name: Ensure website directory structure exists
+  win_file:
+    path: C:\sites\energy
+    state: directory
+
+- name: Copy website archive to webserver)
+  win_copy:
+    src: files/"{{ webarchive }}.zip"
+    dest: C:\sites\energy\"{{ webarchive }}.zip"
+
+- name: Pull down website code
+  win_get_url:
+    url: https://drive.google.com/file/d/1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV/view?usp=sharing
+    dest: /var/www/html/
+    skip_certificate_validation: true
+    force: true
+
+- name: Unpack website
+  unzip:
+   src: /var/www/html/"{{ webarchive }}.zip"
+   dest: /var/www/html/
+
+- name: Copy website files into place
+  copy:
+    src: /var/www/html/{{ webarchive }}
+    dest: /var/www/html/
+    remote_src: True
+
+- name: Remove the website zip file, if present
+  file:
+    path: /var/www/html/"{{ webarchive }}.zip"
+    state: absent
+
+- name: Enable and start httpd
+  service:
+    name: httpd
+    enabled: yes
+    state: started
