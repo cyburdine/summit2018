@@ -5,8 +5,7 @@
   become: true
 
   vars:
-    http_port: 80
-    https_port: 443
+    webarchive: energy_corpsite.zip
 
   roles:
     - 1.0p2-install_apache_httpd
