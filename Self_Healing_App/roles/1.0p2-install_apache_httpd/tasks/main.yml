@@ -25,15 +25,15 @@
     force: true
 
 - name: Unpack website
-  unzip:
+  unarchive:
    src: /var/www/html/"{{ webarchive }}.zip"
    dest: /var/www/html/
 
-- name: Copy website files into place
-  copy:
-    src: /var/www/html/{{ webarchive }}
-    dest: /var/www/html/
-    remote_src: True
+# - name: Copy website files into place
+#   copy:
+#     src: /var/www/html/{{ webarchive }}
+#     dest: /var/www/html/
+#     remote_src: True
 
 - name: Remove the website zip file, if present
   file:
