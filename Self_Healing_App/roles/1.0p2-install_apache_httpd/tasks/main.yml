@@ -1,32 +1,32 @@
 ---
-- name: display ip address
-  debug: var="{{ ansible_host }}"
+# - name: display ip address
+#   debug: var="{{ ansible_host }}"
 
 - name: Install Apache httpd
   yum:
     name: httpd
     state: latest
 
-- name: Ensure website directory structure exists
-  file:
-    path: C:\sites\energy
-    state: directory
+# - name: Ensure website directory structure exists
+#   file:
+#     path: C:\sites\energy
+#     state: directory
 
-- name: Copy website archive to webserver)
-  copy:
-    src: files/"{{ webarchive }}.zip"
-    dest: C:\sites\energy\"{{ webarchive }}.zip"
+# - name: Copy website archive to webserver)
+#   copy:
+#     src: files/"{{ webarchive }}.zip"
+#     dest: C:\sites\energy\"{{ webarchive }}.zip"
 
-- name: Pull down website code
-  get_url:
-    url: https://drive.google.com/file/d/1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV/view?usp=sharing
-    dest: /var/www/html/
-    skip_certificate_validation: true
-    force: true
+# - name: Pull down website code
+#   get_url:
+#     url: https://drive.google.com/file/d/1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV/view?usp=sharing
+#     dest: /var/www/html/
+#     skip_certificate_validation: true
+#     force: true
 
 - name: Unpack website
   unarchive:
-   src: /var/www/html/"{{ webarchive }}.zip"
+   src: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
    dest: /var/www/html/
 
 # - name: Copy website files into place
@@ -35,10 +35,10 @@
 #     dest: /var/www/html/
 #     remote_src: True
 
-- name: Remove the website zip file, if present
-  file:
-    path: /var/www/html/"{{ webarchive }}.zip"
-    state: absent
+# - name: Remove the website zip file, if present
+#   file:
+#     path: /var/www/html/"{{ webarchive }}.zip"
+#     state: absent
 
 - name: Enable and start httpd
   service:
