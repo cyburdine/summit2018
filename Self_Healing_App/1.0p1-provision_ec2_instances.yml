@@ -17,4 +17,4 @@
     wait_for_ssh: False
 
   roles:
-    - provision_ec2_instances
+    - 1.0p1-provision_ec2_instances
