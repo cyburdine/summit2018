@@ -1,12 +1,20 @@
 ---
-# This playbook deploys a simple website.
-- name: Install apache httpd and deploy website
+- name: Create new EC2 instances
   hosts: all
-  become: true
+  gather_facts: false
+  connection: local
 
   vars:
-    http_port: 80
-    https_port: 443
+    region:   us-west-1
+    ami: ami-01b0e074974547d44
+    keypair:  summit-root
+    set_dns:  False
+    vpc_subnet: subnet-23ec8c78
+    tags:
+      Name: "{{ ansible_hostname }}"
+      env:  "{{ tags_env  | default('prod') }}"
+      type: "{{ tags_type | default('app') }}"
+    wait_for_ssh: False
 
   roles:
-    - 1.0p2-install_apache_httpd
+    - 1.0p1-provisiton_ec2_instances
