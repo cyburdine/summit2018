@@ -17,16 +17,16 @@
 #     src: files/"{{ webarchive }}.zip"
 #     dest: C:\sites\energy\"{{ webarchive }}.zip"
 
-# - name: Pull down website code
-#   get_url:
-#     url: https://drive.google.com/file/d/1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV/view?usp=sharing
-#     dest: /var/www/html/
-#     skip_certificate_validation: true
-#     force: true
+- name: Pull down website code
+  get_url:
+    url: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
+    dest: /var/www/html/energy_corpsite.zip
+    skip_certificate_validation: true
+    force: true
 
 - name: Unpack website
   unarchive:
-   src: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
+   src: /var/www/html/energy_corpsite.zip
    dest: /var/www/html/
 
 # - name: Copy website files into place
