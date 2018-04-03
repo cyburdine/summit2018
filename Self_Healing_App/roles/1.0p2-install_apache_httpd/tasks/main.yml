@@ -8,17 +8,17 @@
     state: latest
 
 - name: Ensure website directory structure exists
-  win_file:
+  file:
     path: C:\sites\energy
     state: directory
 
 - name: Copy website archive to webserver)
-  win_copy:
+  copy:
     src: files/"{{ webarchive }}.zip"
     dest: C:\sites\energy\"{{ webarchive }}.zip"
 
 - name: Pull down website code
-  win_get_url:
+  get_url:
     url: https://drive.google.com/file/d/1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV/view?usp=sharing
     dest: /var/www/html/
     skip_certificate_validation: true
