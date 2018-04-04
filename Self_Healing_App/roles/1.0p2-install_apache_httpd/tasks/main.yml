@@ -20,7 +20,7 @@
 - name: Pull down website code
   get_url:
     url: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
-    dest: /var/www/html/energy_corpsite.zip
+    dest: /var/www/html/
     # skip_certificate_validation: true
     # force: true
 
