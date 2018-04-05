@@ -1,0 +1,24 @@
+---
+- name: Create new EC2 ELB
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+
+  tasks:
+    local_action:
+      module: ec2_elb_lb
+      name: "student01_elb"
+      scheme: internal
+      state: present
+      instance_ids:
+        - i-02a2c256ee0434e9d
+        - i-0923b451c80c33ff7
+      purge_instance_ids: true
+      subnets:
+        - subnet-23ec8c78
+      listeners:
+        - protocol: http # options are http, https, ssl, tcp
+          load_balancer_port: 80
+          instance_port: 80
