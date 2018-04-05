@@ -2,7 +2,7 @@
 - name: Launch instance
   ec2:
     keypair: "{{ keypair }}"
-    instance_type: t2.small
+    instance_type: t2.micro
     image: "{{ ami }}"
     wait: yes
     group: Web Servers
