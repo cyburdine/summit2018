@@ -17,8 +17,8 @@
         - i-0923b451c80c33ff7
       purge_instance_ids: true
       subnets:
-        - subnet-23ec8c78
+        subnet-23ec8c78
       listeners:
-        - protocol: http # options are http, https, ssl, tcp
-          load_balancer_port: 80
-          instance_port: 80
+        protocol: http # options are http, https, ssl, tcp
+        load_balancer_port: 80
+        instance_port: 80
