@@ -1,4 +1,4 @@
----
+--
 - name: Launch instance
   ec2:
     keypair: "{{ keypair }}"
