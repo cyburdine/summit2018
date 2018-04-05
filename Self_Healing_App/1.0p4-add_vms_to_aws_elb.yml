@@ -7,4 +7,4 @@
   vars:
 
   roles:
-    - 1.0p3-add_vms_to_aws_elb
+    - 1.0p4-add_vms_to_aws_elb
