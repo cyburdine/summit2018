@@ -1,9 +1,0 @@
----
-- name: Install apache httpd and deploy website
-  hosts: all
-  become: true
-
-  vars:
-
-  roles:
-    - 1.0p3-install_website

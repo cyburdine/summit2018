@@ -1,0 +1,10 @@
+---
+- name: Attach instances to AWS ELB
+  hosts: all
+  become: true
+  connection: local
+
+  vars:
+
+  roles:
+    - 1.0p3-add_vms_to_aws_elb
