@@ -29,7 +29,7 @@
   unarchive:
    src: /var/www/html/energy_corpsite.zip
    dest: /var/www/html/
-
+   remote_src: yes
 # - name: Copy website files into place
 #   copy:
 #     src: /var/www/html/{{ webarchive }}
