@@ -1,11 +1,11 @@
 ---
 - name: Attach instances to AWS ELB
   hosts: all
-  become: true
+  gather_facts: false
   connection: local
 
   vars:
     elb_name: student01-elb
-    
+
   roles:
     - 1.0p4-add_vms_to_aws_elb
