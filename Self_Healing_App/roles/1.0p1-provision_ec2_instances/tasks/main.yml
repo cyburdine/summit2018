@@ -16,9 +16,8 @@
   register: ec2
 
 - name: Dump stored facts
-    debug:
-      msg: "info  {{ ec2.instances }}"
-
+  debug:
+    msg: "info  {{ ec2.instances }}"
 
 - name: Tower | Add new instance to host group
   add_host:
