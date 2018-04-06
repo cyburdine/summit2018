@@ -11,7 +11,7 @@
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:
-      Name: "{{ student }}-{{ ansible_hostname }}"
+      Name: "{{ student }}-{{ instance_name }}"
       owner: "{{ student }}"
   register: ec2
 
