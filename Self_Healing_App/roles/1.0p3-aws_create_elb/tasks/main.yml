@@ -2,15 +2,10 @@
 
 - name: Provision application load balancer
   ec2_elb_lb:
-    name: "student01-elb"
-    scheme: internal
+    name: "{{ student }}-elb"
     state: present
     region: us-west-1
     validate_certs: no
-    instance_ids:
-      - i-02a2c256ee0434e9d
-      - i-0923b451c80c33ff7
-    purge_instance_ids: true
     subnets:
       - subnet-23ec8c78
     listeners:

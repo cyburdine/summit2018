@@ -2,6 +2,7 @@
 # This playbook deploys a simple website.
 - name: Install apache httpd and deploy website
   hosts: all
+  gather_facts: true
   become: true
 
   vars:
