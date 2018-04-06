@@ -23,7 +23,7 @@
     ansible_host: "{{ item.public_ip }}"
     private_ip: "{{ item.private_ip }}"
     groups: "{{ student }}"
-  with_items: "{{ ec2.results | map(attribute='tagged_instances') | list }}"
+  with_items: "{{ ec2.instances | map(attribute='tagged_instances') | list }}"
 
 - name: Wait for SSH to come up
   wait_for:
