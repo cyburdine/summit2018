@@ -5,7 +5,6 @@
   connection: local
 
   vars:
-
     elb_name: "{{ student }}-elb"
 
   roles:
