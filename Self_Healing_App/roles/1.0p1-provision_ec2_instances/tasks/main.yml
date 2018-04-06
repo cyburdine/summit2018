@@ -21,9 +21,10 @@
 
 - name: Tower | Add new instance to host group
   add_host:
-    hostname: "{{ item.ec2_tag_Name }}"
-    ansible_host: "{{ item.ec2_public_dns_name }}"
-    private_ip: "{{ item.ec2_private_ip_address }}"
+    hostname: "{{ item.Name }}"
+    public_ip: "{{ item.public_ip }}"
+    public_dns: "{{ item.public_dns_name }}"
+    private_ip: "{{ item.private_ip }}"
     groups: "{{ student }}"
   with_items: "{{ ec2.instances }}"
 
