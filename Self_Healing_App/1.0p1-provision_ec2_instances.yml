@@ -9,9 +9,6 @@
     ami: ami-01b0e074974547d44
     keypair: summit-root
     vpc_subnet: subnet-23ec8c78
-    tags:
-      Name: "{{ ansible_hostname }}"
-      owner:  "{{ student }}"
 
   roles:
     - 1.0p1-provision_ec2_instances
