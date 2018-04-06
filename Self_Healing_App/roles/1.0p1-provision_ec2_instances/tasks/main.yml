@@ -11,6 +11,9 @@
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags: "{{ tags }}"
+  loop: 
+    - "{{ student }}-app01"
+    - "{{ student }}-app02"
   register: ec2
 
 - name: Wait for SSH to come up
