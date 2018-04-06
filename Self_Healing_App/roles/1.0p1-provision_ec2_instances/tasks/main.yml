@@ -11,11 +11,8 @@
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:
-      Name: "{{ student }}-{{ item }}"
+      Name: "{{ student }}-{{ ansible_hostname }}"
       owner: "{{ student }}"
-  with_items:
-    - app01
-    - app02
   register: ec2
 
 - name: Wait for SSH to come up
