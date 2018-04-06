@@ -11,7 +11,7 @@
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:
-      Name: "{{ student }}-{{ instance_name }}"
+      Name: "{{ student }}-{{ inventory_hostname }}"
       owner: "{{ student }}"
   register: ec2
 
