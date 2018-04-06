@@ -6,6 +6,7 @@
     scheme: internal
     state: present
     region: us-west-1
+    validate_certs: no
     instance_ids:
       - i-02a2c256ee0434e9d
       - i-0923b451c80c33ff7
