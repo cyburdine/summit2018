@@ -19,14 +19,14 @@
 #         load_balancer_port: 443
 #         instance_port: 443
 
-- local_action:
-    module: ec2_elb_lb
-    name: "test_elb"
-    scheme: internal
-    state: present
-    subnets:
-      - subnet-23ec8c78
-    listeners:
-      - protocol: http # options are http, https, ssl, tcp
-        load_balancer_port: 80
-        instance_port: 80
+local_action:
+  module: ec2_elb_lb
+  name: "test_elb"
+  scheme: internal
+  state: present
+  subnets:
+    - subnet-23ec8c78
+  listeners:
+    - protocol: http # options are http, https, ssl, tcp
+      load_balancer_port: 80
+      instance_port: 80
