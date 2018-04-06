@@ -5,6 +5,7 @@
   connection: local
 
   vars:
-
+    elb_name: student01-elb
+    
   roles:
     - 1.0p4-add_vms_to_aws_elb
