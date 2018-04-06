@@ -22,11 +22,13 @@
 local_action:
   module: ec2_elb_lb
   name: "test_elb"
-  scheme: internal
   state: present
+  zones:
+    - us-west-1a
+    - us-west-1c
   subnets:
     - subnet-23ec8c78
-  # listeners:
-  #   - protocol: http # options are http, https, ssl, tcp
-  #     load_balancer_port: 80
-  #     instance_port: 80
+  listeners:
+    - protocol: http # options are http, https, ssl, tcp
+      load_balancer_port: 80
+      instance_port: 80
