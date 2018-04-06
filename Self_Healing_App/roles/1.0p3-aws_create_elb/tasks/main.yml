@@ -15,3 +15,6 @@
       - protocol: http # options are http, https, ssl, tcp
         load_balancer_port: 80
         instance_port: 80
+      - protocol: https # options are http, https, ssl, tcp
+        load_balancer_port: 443
+        instance_port: 443 
