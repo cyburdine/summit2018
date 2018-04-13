@@ -5,7 +5,6 @@
   connection: local
 
   vars:
-    student: student01
     elb_name: "{{ student }}-elb"
 
   tasks:
@@ -16,7 +15,7 @@
         name: "HealthyHostCount"
         metric: "HealthyHostCount"
         namespace: "AWS/ELB"
-        statistic: Sum
+        statistic: Maximum
         comparison: "<"
         threshold: 2
         period: 60
@@ -24,4 +23,4 @@
         unit: "Count"
         description: "This will alarm when the count of healthy hosts is less than 2 "
         dimensions: {'LoadBalancerName':'{{ elb_name }}'}
-        alarm_actions: ["arn:aws:sns:us-west-1:662766996214:AWSConfig_topic"]
+        alarm_actions: ["arn:aws:sns:us-west-1:662766996214:cloudforms"]
