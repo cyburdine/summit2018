@@ -5,7 +5,7 @@
   connection: local
 
   vars:
-    ansible_tower_ip: 10.0.0.4
+    ansible_tower_ip: summitrhel74-summitcloudformswo-jeuhusbi.srv.ravcloud.com
     ## this variable needs to be set by the job template in tower
     workflow_job_template_id: 18
     # tower_user & tower_pass are provided in the encrypted vars below
