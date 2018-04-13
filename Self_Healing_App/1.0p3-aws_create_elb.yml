@@ -4,5 +4,8 @@
   gather_facts: false
   connection: local
 
+  vars:
+    elb_name: "{{ student }}-elb"
+
   roles:
      - 1.0p3-aws_create_elb

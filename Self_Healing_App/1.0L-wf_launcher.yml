@@ -1,0 +1,14 @@
+---
+- name: Launching Workflow
+  hosts: localhost
+  gather_facts: False
+  connection: local
+
+  vars:
+    ansible_tower_ip: 10.0.0.4
+    ## this variable needs to be set by the job template in tower
+    # workflow_job_template_id: 16
+    # tower_user & tower_pass are provided in the encrypted vars below
+
+  roles:
+  - 1.0L-wf_launcher

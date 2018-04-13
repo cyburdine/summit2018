@@ -3,8 +3,8 @@
   local_action:
     module: ec2_elb
     ec2_region: us-west-1
-    instance_id: {{ ec2_id }}
-    ec2_elbs: {{ elb_name }}
+    instance_id: "{{ ec2_id }}"
+    ec2_elbs: "{{ elb_name }}"
     state: present
     wait: yes
     wait_timeout: 60

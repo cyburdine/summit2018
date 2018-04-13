@@ -2,7 +2,7 @@
 
 - name: Provision application load balancer
   ec2_elb_lb:
-    name: "{{ student }}-elb"
+    name: "{{ elb_name }}"
     state: present
     region: us-west-1
     validate_certs: no
