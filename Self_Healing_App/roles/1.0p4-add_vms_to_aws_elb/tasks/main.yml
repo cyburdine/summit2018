@@ -9,20 +9,3 @@
     wait: yes
     wait_timeout: 60
   ignore_errors: yes
-
-- name: create alarm
-  ec2_metric_alarm:
-    state: present
-    region: us-west-1
-    name: "Healthy-Host-Count"
-    metric: "HealthyHost"
-    namespace: "AWS/EC2"
-    statistic: Sum
-    comparison: "<"
-    threshold: 2
-    period: 60
-    evaluation_periods: 1
-    unit: "Count"
-    description: "This will alarm when the count of healthy hosts is less than 2 "
-    dimensions: {'ElbId':'{{ elb_name }}'}
-    alarm_actions: ["action1","action2"]
