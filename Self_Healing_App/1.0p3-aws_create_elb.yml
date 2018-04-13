@@ -7,5 +7,19 @@
   vars:
     elb_name: "{{ student }}-elb"
 
-  roles:
-     - 1.0p3-aws_create_elb
+  tasks:
+     - name: Provision application load balancer
+       ec2_elb_lb:
+         name: "{{ elb_name }}"
+         state: present
+         region: us-west-1
+         validate_certs: no
+         # subnets:
+         #   - subnet-23ec8c78
+         zones:
+           - us-west-1a
+           - us-west-1c
+         listeners:
+           - protocol: http # options are http, https, ssl, tcp
+             load_balancer_port: 80
+             instance_port: 80
