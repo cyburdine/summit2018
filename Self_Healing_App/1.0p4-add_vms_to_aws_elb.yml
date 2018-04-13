@@ -1,6 +1,6 @@
 ---
 - name: Attach instances to AWS ELB
-  hosts: all
+  hosts: "{{ student }}-app01", "{{ student }}-app02"
   gather_facts: false
   connection: local
 
