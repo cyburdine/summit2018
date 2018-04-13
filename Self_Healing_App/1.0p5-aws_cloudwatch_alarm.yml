@@ -12,7 +12,7 @@
       ec2_metric_alarm:
         state: present
         region: us-west-1
-        name: "HealthyHostCount"
+        name: "{{ student }}-HealthyHostCount"
         metric: "HealthyHostCount"
         namespace: "AWS/ELB"
         statistic: Maximum
