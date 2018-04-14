@@ -1,6 +1,8 @@
 ---
 - name: Install apache httpd and deploy website
-  hosts: all
+  hosts:
+    - "tag_Name_{{ student }}_app01"
+    - "tag_Name_{{ student }}_app02"
   gather_facts: true
   become: true
 
