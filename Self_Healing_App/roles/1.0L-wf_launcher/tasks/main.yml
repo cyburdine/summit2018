@@ -6,7 +6,8 @@
 
 - name: Job Template to launch a Workflow Job Template
   uri:
-    url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/{{ workflows[student].wf }}/launch/
+    #url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/{{ workflows[student].wf }}/launch/
+    url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/17/launch/
     method: POST
     user: "{{ student }}"
     password: "{{ tower_pass }}"
