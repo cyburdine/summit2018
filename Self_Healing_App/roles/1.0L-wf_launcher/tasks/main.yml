@@ -1,10 +1,12 @@
 ---
-- name: Get encrypted variables
-  include_vars: wf_launcher_vars.yml
+- name: "Get required variables"
+  include_vars:
+    dir: 'vars'
+    extensions: ['yml']
 
 - name: Job Template to launch a Workflow Job Template
   uri:
-    url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/{{ workflow_job_template_id }}/launch/
+    url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/{{ workflows[student].wf }}/launch/
     method: POST
     user: "{{ student }}"
     password: "{{ tower_pass }}"
