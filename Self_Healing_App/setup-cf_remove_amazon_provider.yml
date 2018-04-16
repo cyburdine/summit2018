@@ -1,0 +1,27 @@
+---
+- name: Build and deploy demonstration overview page
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+
+  tasks:
+    - name: Create a new Amazon provider in ManageIQ using token authentication
+  manageiq_provider:
+    name: 'Amazon EC2 (US West)'
+    type: 'Amazon'
+    provider_region: 'us-west-1'
+    provider:
+      hostname: 'amazon.example.com'
+      userid: 'hello'
+      password: 'world'
+    manageiq_connection:
+      url: 'http://{{ item }}:3000'
+      username: {{ cf_usesrname }}
+      password: {{ cf_password }}
+      verify_ssl: False
+    with_items:
+      - server1
+      - server2
+      - etc
