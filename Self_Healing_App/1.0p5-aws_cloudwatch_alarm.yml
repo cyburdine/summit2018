@@ -23,4 +23,4 @@
         unit: "Count"
         description: "This will alarm when the count of healthy hosts is less than 2 "
         dimensions: {'LoadBalancerName':'{{ elb_name }}'}
-        alarm_actions: ["arn:aws:sns:us-west-1:662766996214:{{ student}}-HealthyHostCount"]
+        alarm_actions: ["arn:aws:sns:us-west-1:662766996214:AWSConfig_topic"]
