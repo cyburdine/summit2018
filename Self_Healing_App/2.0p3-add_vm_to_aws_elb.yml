@@ -1,0 +1,21 @@
+---
+- name: Attach instances to AWS ELB
+  hosts:
+    - "tag_Name_{{ student }}_app03"
+  gather_facts: false
+  connection: local
+
+  vars:
+    elb_name: "{{ student }}-elb"
+
+  tasks:
+    - name: Add new host to ELB
+      local_action:
+        module: ec2_elb
+        ec2_region: us-west-1
+        instance_id: "{{ ec2_id }}"
+        ec2_elbs: "{{ elb_name }}"
+        state: present
+        wait: yes
+        wait_timeout: 60
+      ignore_errors: yes
