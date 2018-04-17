@@ -1,11 +1,13 @@
-[ cf_servers ]
-summitcfmeauto01-summitcflab-glourwpd.srv.ravcloud.com
-summitcfmeauto02-summitcflab-2m0xvobx.srv.ravcloud.com
-summitcfmeauto03-summitcflab-fusyarsn.srv.ravcloud.com
-summitcfmeauto04-summitcflab-5a3wfllz.srv.ravcloud.com
-summitcfmeauto05-summitcflab-zcfbsdvt.srv.ravcloud.com
-summitcfmeauto06-summitcflab-5gsi3ru0.srv.ravcloud.com
-summitcfmeauto07-summitcflab-e8zrc9an.srv.ravcloud.com
-summitcfmeauto08-summitcflab-yfdzcm4f.srv.ravcloud.com
-summitcfmeauto09-summitcflab-pqdbeepm.srv.ravcloud.com
-summitcfmeauto10-summitcflab-er7gy4gr.srv.ravcloud.com
+all:
+  hosts:
+    cf_servers:
+      summitcfmeauto01-summitcflab-glourwpd.srv.ravcloud.com:
+      summitcfmeauto02-summitcflab-2m0xvobx.srv.ravcloud.com:
+      summitcfmeauto03-summitcflab-fusyarsn.srv.ravcloud.com:
+      summitcfmeauto04-summitcflab-5a3wfllz.srv.ravcloud.com:
+      summitcfmeauto05-summitcflab-zcfbsdvt.srv.ravcloud.com:
+      summitcfmeauto06-summitcflab-5gsi3ru0.srv.ravcloud.com:
+      summitcfmeauto07-summitcflab-e8zrc9an.srv.ravcloud.com:
+      summitcfmeauto08-summitcflab-yfdzcm4f.srv.ravcloud.com:
+      summitcfmeauto09-summitcflab-pqdbeepm.srv.ravcloud.com:
+      summitcfmeauto10-summitcflab-er7gy4gr.srv.ravcloud.com:
