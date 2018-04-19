@@ -23,7 +23,7 @@
         region: "{{ region }}"
         assign_public_ip: yes
         instance_tags:
-          Name: "{{ student }}-app03
+          Name: "{{ student }}-app03"
           owner: "{{ student }}"
       register: ec2
 
