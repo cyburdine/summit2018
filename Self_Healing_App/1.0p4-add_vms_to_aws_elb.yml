@@ -20,3 +20,5 @@
         wait: yes
         wait_timeout: 60
       ignore_errors: yes
+
+  - name: Set ELB facts for
