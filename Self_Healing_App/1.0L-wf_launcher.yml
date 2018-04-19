@@ -6,11 +6,8 @@
 
   vars:
     ansible_tower_ip: summitrhel74-summitcloudformswo-jeuhusbi.srv.ravcloud.com
-    ## NORMALLY, this variable needs to be set to the corresponding workflow template in tower
-    ## However in this playbook I'm setting the corresponding workflow id based on the supplied student id
-    ## I do this lookup in the wf_laucher_vars.yml
     #
-    # workflow_job_template_id: "{{ workflow_id }}"
+    workflow_job_template_id: 17
     #
     ###
     ## the tower credentials below are set in encrypted_wf_laucher_vars.yml
