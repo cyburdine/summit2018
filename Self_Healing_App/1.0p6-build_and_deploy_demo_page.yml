@@ -7,4 +7,24 @@
   vars:
 
   tasks:
-    - name: gather_facts
+    - name: get vmguest facts
+      ## Insert EC2 guest facts stuff in here.
+      # vsphere_guest:
+      #   vmware_guest_facts: true
+      #   vcenter_hostname: ###.###.###.###
+      #   username: "{{ VCenter User }}"
+      #   password: "{{ VCenter Pass }}"
+      #   guest: "{{ name of vm }}"
+      #   validate_certs: no
+      register: vmguest_facts
+
+    - name: dump specific facts to stdout
+      debug:
+        msg="vmguest facts are {{ vmguest_facts }}
+        VM Name - {{ vmguest_facts.ansible_facts.hw_name }}
+        CPU Count - {{ vmguest_facts.ansible_facts.hw_processor_count }}
+        Memory Count - {{ vmguest_facts.ansible_facts.hw_memtotal_mb }}
+        OS - {{ vmguest_facts.ansible_facts.hw_guest_full_name }}
+        Power State - {{ vmguest_facts.ansible_facts.hw_power_status }}
+        "
+    #    IP Addresses - {{ vmguest_facts.ansible_facts.ipaddresses.[1] }}
