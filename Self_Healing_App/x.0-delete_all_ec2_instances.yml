@@ -23,6 +23,7 @@
     - name: Removing load balancer
       ec2_elb_lb:
         name: "{{ item }}"
+        region: us-west-1
         state: absent
       with_items:
         - student01-elb
