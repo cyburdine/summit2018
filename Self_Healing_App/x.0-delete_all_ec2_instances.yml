@@ -25,43 +25,4 @@
         name: "{{ item }}"
         region: us-west-1
         state: absent
-      with_items:
-        - student01-elb
-        - student02-elb
-        - student03-elb
-        - student04-elb
-        - student05-elb
-        - student06-elb
-        - student07-elb
-        - student08-elb
-        - student09-elb
-        - student10-elb
-        - student11-elb
-        - student12-elb
-        - student13-elb
-        - student14-elb
-        - student15-elb
-        - student16-elb
-        - student17-elb
-        - student18-elb
-        - student19-elb
-        - student20-elb
-        - student21-elb
-        - student22-elb
-        - student23-elb
-        - student24-elb
-        - student25-elb
-        - student26-elb
-        - student27-elb
-        - student28-elb
-        - student29-elb
-        - student30-elb
-        - student31-elb
-        - student32-elb
-        - student33-elb
-        - student34-elb
-        - student35-elb
-        - student36-elb
-        - student37-elb
-        - student38-elb
-        - student39-elb
+      with_sequence: start=0 end=60 format=student%02x-elb
