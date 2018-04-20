@@ -1,0 +1,30 @@
+---
+- name: Delete MY EC2 instances and componanets
+  hosts:
+    - "tag_Name_{{ student }}_app01"
+    - "tag_Name_{{ student }}_app02"
+    - "tag_Name_{{ student }}_app03"
+  gather_facts: false
+  connection: local
+
+  vars:
+    region: us-west-1
+    ami: ami-01b0e074974547d44
+    keypair: summit-root
+    vpc_subnet: subnet-23ec8c78
+
+  tasks:
+    - name: Removing MY EC2 instances
+      ec2:
+        instance_id: "{{ ec2_id }}"
+        wait: yes
+        group: Web Servers
+        vpc_subnet_id: "{{ vpc_subnet }}"
+        region: "{{ region }}"
+        state: absent
+
+    - name: Removing load balancer
+      ec2_elb_lb:
+        name: "{{ student }}-elb"
+        region: us-west-1
+        state: absent
