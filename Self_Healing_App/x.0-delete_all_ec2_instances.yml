@@ -13,6 +13,7 @@
   tasks:
     - name: Removing EC2 instance
       ec2:
+        instance_id: "{{ ec2_id }}""
         wait: yes
         group: Web Servers
         vpc_subnet_id: "{{ vpc_subnet }}"
