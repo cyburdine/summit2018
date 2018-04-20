@@ -1,5 +1,5 @@
 ---
-- name: Create new EC2 instances
+- name: Delete ALL EC2 instances and componanets
   hosts: all
   gather_facts: false
   connection: local
@@ -11,11 +11,26 @@
     vpc_subnet: subnet-23ec8c78
 
   tasks:
-    - name: Provision EC2 instance
+    - name: Removing EC2 instance
       ec2:
         wait: yes
         group: Web Servers
-        count: 1
         vpc_subnet_id: "{{ vpc_subnet }}"
         region: "{{ region }}"
         state: absent
+
+      - name: Removing load balancer
+        ec2_elb_lb:
+          name: "{{ item }}"
+          state: absent
+        with_items:
+          - student01-elb
+          - student02-elb
+          - student03-elb
+          - student04-elb
+          - student05-elb
+          - student06-elb
+          - student07-elb
+          - student08-elb
+          - student09-elb
+          - student10-elb
