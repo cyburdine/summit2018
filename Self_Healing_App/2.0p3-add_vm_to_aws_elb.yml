@@ -19,6 +19,7 @@
         wait: yes
         wait_timeout: 60
       ignore_errors: yes
+      register: ec2
 
     - name: Instance info
       debug:
