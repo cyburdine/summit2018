@@ -1,0 +1,9 @@
+---
+- name: Create Active Directory Users
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  vars:
+
+  roles:
