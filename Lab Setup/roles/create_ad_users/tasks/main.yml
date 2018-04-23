@@ -1,18 +1,16 @@
 ---
-- name: Create Active Directory Users
-  hosts: all
-  gather_facts: false
-  connection: local
+- name: "Setting variables"
+  include_vars:
+    dir: 'vars'
+    extensions: ['yml']
 
-  vars:
-
-  tasks:
-    - name: Creating Users
-      win_domain_user:
-        name: "{{ item }}"
-        password: "{{ password }}"
-        state: present
-        path: ou=test,dc=domain,dc=local
-        groups:
-          - Domain Admins
-      with_sequence: start=0 end=60 format=student%02x-elb
+- name: Creating Users
+  win_domain_user:
+  #  name: "{{ item }}"
+    name: student01
+    password: "{{ password }}"
+    state: present
+    path: ou=myad,dc=rhlabs,dc=net
+    groups:
+      - Domain Admins
+  #with_sequence: start=0 end=60 format=student%02xb
