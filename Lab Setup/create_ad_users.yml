@@ -1,6 +1,6 @@
 ---
 - name: Create Active Directory Users
-  hosts: all
+  hosts: localhost
   gather_facts: false
   connection: local
 
