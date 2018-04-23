@@ -6,7 +6,7 @@
 
 - name: Creating CloudForms Users
   manageiq_user:
-    userid: student01
+    userid: "{{ item }}"
     name: "summit {{ item }}"
     password: "{{ my_password }}"
     group: 'EvmGroup-summit_vm_user'
@@ -16,6 +16,7 @@
       username: 'admin'
       password: "{{ my_cf_password}}"
       verify_ssl: False
+  with_sequence: start=0 end=1 format=student%02xb
 
 
 #- name: Creating Active Directory Users
