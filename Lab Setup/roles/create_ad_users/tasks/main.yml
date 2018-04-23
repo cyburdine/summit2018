@@ -4,13 +4,27 @@
     dir: 'vars'
     extensions: ['yml']
 
-- name: Creating Users
-  win_domain_user:
-  #  name: "{{ item }}"
-    name: student01
+- name: Creating CloudForms Users
+  manageiq_user:
+    userid: "{{ item }}"
+    name: "summit {{ item }}"
     password: "{{ my_password }}"
-    state: present
-    path: ou=myad,dc=rhlabs,dc=net
-    groups:
-      - Domain Admins
-  #with_sequence: start=0 end=60 format=student%02xb
+    group: 'EvmGroup-summit_vm_user'
+    email: 'cyburdine@redhat.com'
+    manageiq_connection:
+      url: 'http://summitweb01-summitcflab-cbsgpwwx.srv.ravcloud.com:3000'
+      username: 'admin'
+      password: "{{ my_cf_password}}"
+      verify_ssl: False
+
+
+#- name: Creating Active Directory Users
+  # win_domain_user:
+  # #  name: "{{ item }}"
+  #   name: student01
+  #   password: "{{ my_password }}"
+  #   state: present
+  #   path: ou=myad,dc=rhlabs,dc=net
+  #   groups:
+  #     - Domain Admins
+  # #with_sequence: start=0 end=60 format=student%02xb
