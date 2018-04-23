@@ -6,7 +6,7 @@
 
 - name: Creating CloudForms Users
   manageiq_user:
-    userid: "{{ item }}"
+    userid: student01
     name: "summit {{ item }}"
     password: "{{ my_password }}"
     group: 'EvmGroup-summit_vm_user'
