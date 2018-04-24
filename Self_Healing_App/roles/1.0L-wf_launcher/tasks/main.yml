@@ -14,6 +14,7 @@
       extra_vars:
         launched_from: CloudForms
         student: "{{ student }}"
+        team: "{{ team }}"
     body_format: json
     validate_certs: False
     headers:
