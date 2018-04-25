@@ -25,6 +25,7 @@
         instance_tags:
           Name: "{{ student }}-{{ inventory_hostname }}"
           owner: "{{ student }}"
+          team: "{{ team }}"
       register: ec2
 
     - name: Wait for SSH to come up
