@@ -19,7 +19,7 @@
     aws_secret_key: "{{ creds[team].aws_pass }}"
     keypair: "{{ keypair }}"
     instance_type: t2.micro
-    image: "{{ ami }}"
+    image: "{{ creds[team].aws_ami }}"
     wait: yes
     group: Web Servers
     count: 1
