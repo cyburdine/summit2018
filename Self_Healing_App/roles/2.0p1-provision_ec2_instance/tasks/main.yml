@@ -7,11 +7,11 @@
     dir: 'vars'
     extensions: ['yml']
 
-- name: Dumping vars to validate
-  debug:
-    msg: "user: {{ creds[team].aws_user }}
-             pass: {{ creds[team].aws_pass}}
-             subnet: {{ creds[team].vpc_subnet}}"
+# - name: Dumping vars to validate
+#   debug:
+#     msg: "user: {{ creds[team].aws_user }}
+#              pass: {{ creds[team].aws_pass}}
+#              subnet: {{ creds[team].vpc_subnet}}"
 
 - name: Provision EC2 instance
   ec2:
