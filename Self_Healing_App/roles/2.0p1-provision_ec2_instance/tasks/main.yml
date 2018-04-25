@@ -1,11 +1,15 @@
-- name: "Gather playbook variables"
-  include_vars:
-    dir: 'vars'
-    extensions: ['yml']
+## the sections below that are commented out are an attempt to do dynamic credential switching
+## But for some reason the module is barfing so I need to investigate why that is because
+## this should work, possible bug
 
-- name: Dumping vars to validate
-  debug:
-    msg: "user: {{ creds[team].aws_user }}\npass: {{ creds[team].aws_pass}}"
+# - name: "Gather playbook variables"
+#   include_vars:
+#     dir: 'vars'
+#     extensions: ['yml']
+
+# - name: Dumping vars to validate
+#   debug:
+#     msg: "user: {{ creds[team].aws_user }}\npass: {{ creds[team].aws_pass}}"
 
 - name: Provision EC2 instance
   ec2:
