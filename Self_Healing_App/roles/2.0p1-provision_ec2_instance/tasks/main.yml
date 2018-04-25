@@ -29,6 +29,7 @@
     instance_tags:
       Name: "{{ student }}-app03"
       owner: "{{ student }}"
+      team: "{{ team }}"
   register: ec2
 
 - name: Wait for SSH to come up
