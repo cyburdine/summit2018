@@ -11,7 +11,7 @@
     vpc_subnet: subnet-23ec8c78
 
   roles:
-  - 2.0p1-provision_ec2_instance
+    - 2.0p1-provision_ec2_instance
 
   # tasks:
   #   - name: Provision EC2 instance
