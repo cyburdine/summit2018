@@ -3,6 +3,10 @@
     dir: 'vars'
     extensions: ['yml']
 
+- name: Dumping vars to validate
+  debug:
+    msg: "{{ creds[team].aws_user }}"
+
 - name: Provision EC2 instance
   ec2:
     aws_access_key: creds[team].aws_user
