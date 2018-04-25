@@ -5,7 +5,7 @@
 
 - name: Dumping vars to validate
   debug:
-    msg: "{{ creds[team].aws_user }}"
+    msg: "user: {{ creds[team].aws_user }}\npass: {{ creds[team].aws_pass}}"
 
 - name: Provision EC2 instance
   ec2:
