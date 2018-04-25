@@ -8,35 +8,43 @@
   vars:
 
   tasks:
-    - name: Install Apache httpd
-      yum:
-        name: httpd
-        state: latest
+    - name: Dumping vars to validate
+       debug:
+         msg: "user: {{ creds[team].aws_ami }}"
 
-    - name: Install unzip
-      yum:
-        name: unzip
-        state: latest
 
-    - name: Pull down website code
-      get_url:
-        url: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
-        dest: /var/www/html/
-        timeout: 90
 
-    - name: Unpack website
-      unarchive:
-       src: /var/www/html/energy_corpsite.zip
-       dest: /var/www/html/
-       remote_src: yes
 
-    - name: Remove the website zip file
-      file:
-        path: /var/www/html/energy_corpsite.zip
-        state: absent
 
-    - name: Enable and start httpd
-      service:
-        name: httpd
-        enabled: yes
-        state: started
+    # - name: Install Apache httpd
+    #   yum:
+    #     name: httpd
+    #     state: latest
+    #
+    # - name: Install unzip
+    #   yum:
+    #     name: unzip
+    #     state: latest
+    #
+    # - name: Pull down website code
+    #   get_url:
+    #     url: https://drive.google.com/uc?id=1u4ix7FVCaf0sMFUbDDvguQxqhlj6kcQV&export=download
+    #     dest: /var/www/html/
+    #     timeout: 90
+    #
+    # - name: Unpack website
+    #   unarchive:
+    #    src: /var/www/html/energy_corpsite.zip
+    #    dest: /var/www/html/
+    #    remote_src: yes
+    #
+    # - name: Remove the website zip file
+    #   file:
+    #     path: /var/www/html/energy_corpsite.zip
+    #     state: absent
+    #
+    # - name: Enable and start httpd
+    #   service:
+    #     name: httpd
+    #     enabled: yes
+    #     state: started
