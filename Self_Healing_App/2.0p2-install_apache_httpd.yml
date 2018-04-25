@@ -1,7 +1,7 @@
 ---
 - name: Install apache httpd and deploy website
   hosts:
-    - "tag_Name_{{ student }}_app03"
+    - "tag_Name_{{ student }}_app03":&"{{ creds[team].aws_ami }}"
   gather_facts: false
   become: true
 
