@@ -6,7 +6,7 @@
 
   vars:
     region: us-west-1
-    ami: ami-01b0e074974547d44
+    # ami: ami-01b0e074974547d44
     keypair: summit-root
     vpc_subnet: subnet-23ec8c78
 
