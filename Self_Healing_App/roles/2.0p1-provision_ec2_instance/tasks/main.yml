@@ -21,7 +21,7 @@
     wait: yes
     group: Web Servers
     count: 1
-    vpc_subnet_id: creds[team].vpc_subnet
+    vpc_subnet_id: "{{ creds[team].vpc_subnet }}""
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:
