@@ -25,4 +25,4 @@
         name: "{{ item }}"
         region: us-west-1
         state: absent
-      with_sequence: start=0 end=60 format=student%02x-elb
+      with_sequence: start=1 end=10 format=student%02x-elb
