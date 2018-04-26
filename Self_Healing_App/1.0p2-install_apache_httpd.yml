@@ -1,8 +1,8 @@
 ---
 - name: Install apache httpd and deploy website
   hosts:
-    - tag_Name_{{ student }}_app01,&tag_team_{{ team }}
-    - tag_Name_{{ student }}_app02,&tag_team_{{ team }}
+    - tag_Name_{{ student }}_app01
+    - tag_Name_{{ student }}_app02
   gather_facts: false
   become: true
 
