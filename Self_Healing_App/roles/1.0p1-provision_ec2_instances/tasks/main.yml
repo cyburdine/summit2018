@@ -1,11 +1,7 @@
-## the sections below that are commented out are an attempt to do dynamic credential switching
-## But for some reason the module is barfing so I need to investigate why that is because
-## this should work, possible bug
-
-- name: "Gather Playbook Variables"
-  include_vars:
-    dir: 'vars'
-    extensions: ['yml']
+# - name: "Gather Playbook Variables"
+#   include_vars:
+#     dir: 'vars'
+#     extensions: ['yml']
 
 - name: Provision EC2 instance
   ec2:
