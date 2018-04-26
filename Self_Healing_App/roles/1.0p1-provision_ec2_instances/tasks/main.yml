@@ -26,8 +26,8 @@
       team: "{{ team }}"
   register: ec2
   with_items:
-    - {{ student }}-app01
-    - {{ student }}-app02
+    - "{{ student }}-app01"
+    - "{{ student }}-app02"
 
 - debug: msg="item.item={{item.item}}, item.stdout={{item.stdout}}, item.changed={{item.changed}}"
       with_items: "{{ec2.results}}"
