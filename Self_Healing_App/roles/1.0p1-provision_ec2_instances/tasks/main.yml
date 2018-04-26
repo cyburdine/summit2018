@@ -29,8 +29,8 @@
     - "{{ student }}-app01"
     - "{{ student }}-app02"
 
-- debug: msg="item.item={{item.item}}, item.changed={{item.changed}}"
-  with_items: "{{ec2.results}}"
+# - debug: msg="item.item={{item.item}}, item.changed={{item.changed}}"
+#   with_items: "{{ec2.results}}"
 
 - name: Wait for SSH to come up
   wait_for:
