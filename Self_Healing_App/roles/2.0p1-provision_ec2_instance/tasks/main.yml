@@ -1,29 +1,12 @@
-## the sections below that are commented out are an attempt to do dynamic credential switching
-## But for some reason the module is barfing so I need to investigate why that is because
-## this should work, possible bug
-
-- name: "Gather playbook variables"
-  include_vars:
-    dir: 'vars'
-    extensions: ['yml']
-
-# - name: Dumping vars to validate
-#   debug:
-#     msg: "user: {{ creds[team].aws_user }}
-#              pass: {{ creds[team].aws_pass}}
-#              subnet: {{ creds[team].vpc_subnet}}"
-
 - name: Provision EC2 instance
   ec2:
-    aws_access_key: "{{ creds[team].aws_user }}"
-    aws_secret_key: "{{ creds[team].aws_pass }}"
     keypair: "{{ keypair }}"
     instance_type: t2.micro
-    image: "{{ creds[team].aws_ami }}"
     wait: yes
     group: Web Servers
     count: 1
-    vpc_subnet_id: "{{ creds[team].vpc_subnet }}"
+    image: "{{ aws_ami }}"
+    vpc_subnet_id: "{{ vpc_subnet }}"
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:

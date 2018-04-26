@@ -1,19 +1,12 @@
-# - name: "Gather Playbook Variables"
-#   include_vars:
-#     dir: 'vars'
-#     extensions: ['yml']
-
 - name: Provision EC2 instance
   ec2:
-    aws_access_key: "{{ creds[team].aws_user }}"
-    aws_secret_key: "{{ creds[team].aws_pass }}"
     keypair: "{{ keypair }}"
     instance_type: t2.micro
-    image: "{{ creds[team].aws_ami }}"
     wait: yes
     group: Web Servers
     count: 1
-    vpc_subnet_id: "{{ creds[team].vpc_subnet }}"
+    image: "{{ aws_ami }}"
+    vpc_subnet_id: "{{ vpc_subnet }}"
     region: "{{ region }}"
     assign_public_ip: yes
     instance_tags:
