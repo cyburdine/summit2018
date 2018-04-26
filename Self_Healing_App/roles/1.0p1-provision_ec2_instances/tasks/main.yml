@@ -2,7 +2,7 @@
 ## But for some reason the module is barfing so I need to investigate why that is because
 ## this should work, possible bug
 
-- name: "Gather playbook variables"
+- name: "Gather Playbook Variables"
   include_vars:
     dir: 'vars'
     extensions: ['yml']
