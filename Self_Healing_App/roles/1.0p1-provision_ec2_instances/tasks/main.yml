@@ -34,7 +34,7 @@
 
 - name: Wait for SSH to come up
   wait_for:
-    host: "{{ item.instances.public_ip }}"
+    host: "{{ item.instances.public_ip.1 }}"
     port: 22
     delay: 60
     timeout: 320
