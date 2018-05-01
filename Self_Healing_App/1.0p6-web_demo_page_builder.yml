@@ -30,8 +30,8 @@
   #   debug:
   #     msg: "App02 Public DNS: {{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
   #
-  # - debug:
-  #     msg: "{{ elb_facts.elbs.0.dns_name }}"
+  - debug:
+      msg: "{{ elb_ip }}"
 
 - name: Building Initial Demo Page
   hosts:
@@ -48,9 +48,9 @@
     elb_ip: "{{ ansible_facts.0.elb_ip }}"
 
   tasks:
-  - name: "Creating index.html for student: {{ team }}/{{ student }}"
-    template:
-      src: templates/index.j2
-      dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
-      owner: apache
-      group: apache
+  # - name: "Creating index.html for student: {{ team }}/{{ student }}"
+  #   template:
+  #     src: templates/index.j2
+  #     dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
+  #     owner: apache
+  #     group: apache
