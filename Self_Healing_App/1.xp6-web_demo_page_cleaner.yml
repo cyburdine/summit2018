@@ -1,0 +1,16 @@
+---
+- name: Removing Demo Page
+  hosts:
+    - demoweb
+  gather_facts: False
+
+  vars:
+    ansible_tower_ip: # this is set in Tower Inventory
+    team: # provided by provisioner
+    student: # provided by provisioner
+
+  tasks:
+  - name: "Removing index.html for student: {{ team }}/{{ student }}"
+    file:
+      path: /var/www/html/{{ team }}/{{ student }}/index.html
+      state: absent
