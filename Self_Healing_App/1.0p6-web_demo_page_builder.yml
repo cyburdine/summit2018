@@ -1,6 +1,8 @@
 ---
 - name: Building Initial Demo Page
-  hosts: demoweb
+  hosts:
+    - tag_Name_{{ student }}_app01
+    - tag_Name_{{ student }}_app02
   gather_facts: False
   connection: local
 
@@ -12,5 +14,32 @@
     app02_ip: # this will be conditionally set in the role
     elb_ip: # this will be retreived from host_)vars
 
-  roles:
-  - web_demo_page_builder
+  tasks:
+  - name: Dumping host_vars
+    debug:
+      msg: "{{ hostvars[0].ec2_dns_name }}"
+
+
+- name: Building Initial Demo Page
+  hosts:
+    - demoweb
+  gather_facts: False
+  connection: local
+
+  vars:
+    ansible_tower_ip: # this is set in Tower Inventory
+    team: # provided by provisioner
+    student: # provided by provisioner
+    app01_ip: # this will be conditionally set in the role
+    app02_ip: # this will be conditionally set in the role
+    elb_ip: # this will be retreived from host_)vars
+
+
+
+  tasks:
+  # - name: "Creating index.html for student: {{ team }}/{{ student }}"
+  #   template:
+  #     src: templates/index.j2
+  #     dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
+  #     owner: apache
+  #     group: apache
