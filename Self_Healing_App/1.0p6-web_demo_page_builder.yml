@@ -17,7 +17,7 @@
   tasks:
   - name: Dumping host_vars
     debug:
-      msg: "{{ hostvars[hostvars['groups'][tag_Name_{{ student }}_app01][0]].ec2_dns_name }}"
+      msg: "{{ hostvars[hostvars['groups']['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
       #msg: "{{ hostvars }}"
 
 
