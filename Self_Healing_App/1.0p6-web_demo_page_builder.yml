@@ -20,7 +20,7 @@
     elb_classic_lb_facts:
       names: "{{ elb_name }}"
       region: us-west-1
-    delegate_to: localhost
+    connection: local
     register: elb_facts
 
   - name: Setting ELB fact
