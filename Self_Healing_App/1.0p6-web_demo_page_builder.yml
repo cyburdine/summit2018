@@ -10,11 +10,8 @@
     ansible_tower_ip: # this is set in Tower Inventory
     team: # provided by provisioner
     student: # provided by provisioner
-    app01_ip: {{ ec2_public_dns_name }}
-    when: "{{ ec2_tag_Name }}" == '{{ student }}-app01'
-
-    app02_ip: {{ ec2_public_dns_name }}
-    when: "{{ ec2_tag_Name }}" == '{{ student }}-app02'
+    app01_ip: # this will be conditionally set in the role
+    app02_ip: # this will be conditionally set in the role
 
     elb_ip: {{ ec2_public_dns_name }}
 
