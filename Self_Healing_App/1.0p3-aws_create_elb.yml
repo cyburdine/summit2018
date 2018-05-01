@@ -32,4 +32,4 @@
        register: elb_facts
 
      - debug:
-       msg: "{{ elb_facts.elbs.0.dns_name }}"
+         msg: "{{ elb_facts.elbs.0.dns_name }}"
