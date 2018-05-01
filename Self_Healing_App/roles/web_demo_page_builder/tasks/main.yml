@@ -1,4 +1,12 @@
 ---
+- name: Setting conditional vars
+  app01_ip: {{ ec2_public_dns_name }}
+  when: "{{ ec2_tag_Name }}" == '{{ student }} -app01'
+
+  app02_ip: {{ ec2_public_dns_name }}
+  when: "{{ ec2_tag_Name }}" == '{{ student }} -app02'
+
+
 - name: "Creating index.html for student: {{ team }}/{{ student }}"
   template:
     src: templates/index.j2

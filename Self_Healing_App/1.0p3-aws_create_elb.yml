@@ -23,3 +23,7 @@
            - protocol: http # options are http, https, ssl, tcp
              load_balancer_port: 80
              instance_port: 80
+       register: ec2_elb
+
+    - name: Dump ELB IP
+      debug: msg="elb facts are {{ ec2_elb.results }}"
