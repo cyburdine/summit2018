@@ -45,7 +45,7 @@
     student: # provided by provisioner
     app01_ip: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
     app02_ip: "{{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
-    #elb_ip: "{{ elb_facts.elbs.0.dns_name }}"
+    elb_ip: "{{ ansible_facts.0.elb_ip }}"
 
   tasks:
   - name: "Creating index.html for student: {{ team }}/{{ student }}"
