@@ -28,6 +28,7 @@
      - name: Dump ELB IP
        elb_classic_lb_facts:
          names: "{{ elb_name }}"
+         region: us-west-1
        register: elb_facts
 
      - debug:
