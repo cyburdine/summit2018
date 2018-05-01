@@ -13,22 +13,21 @@
     elb_name: "{{ student }}-elb"
 
   tasks:
-  - name: Dumping app01 public dns
-    debug:
-      msg: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
-
-  - name: Dumping app02 public dns
-    debug:
-      msg: "App02 Public DNS: {{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
-
-  - name: Dump ELB IP
+  - name: Gather website infrastructure information
     elb_classic_lb_facts:
       names: "{{ elb_name }}"
       region: us-west-1
     register: elb_facts
-
-  - debug:
-      msg: "{{ elb_facts.elbs.0.dns_name }}"
+  # - name: Dumping app01 public dns
+  #   debug:
+  #     msg: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
+  #
+  # - name: Dumping app02 public dns
+  #   debug:
+  #     msg: "App02 Public DNS: {{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
+  #
+  # - debug:
+  #     msg: "{{ elb_facts.elbs.0.dns_name }}"
 
 - name: Building Initial Demo Page
   hosts:
@@ -44,12 +43,10 @@
     app02_ip: "{{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
     elb_ip: "{{ elb_facts.elbs.0.dns_name }}"
 
-
-
   tasks:
-  # - name: "Creating index.html for student: {{ team }}/{{ student }}"
-  #   template:
-  #     src: templates/index.j2
-  #     dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
-  #     owner: apache
-  #     group: apache
+  - name: "Creating index.html for student: {{ team }}/{{ student }}"
+    template:
+      src: templates/index.j2
+      dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
+      owner: apache
+      group: apache
