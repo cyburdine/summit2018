@@ -18,6 +18,10 @@
       names: "{{ elb_name }}"
       region: us-west-1
     register: elb_facts
+
+  - name: Setting ELB fact
+    set_fact:
+      elb_ip: "{{ elb_facts.elbs.0.dns_name }}"
   # - name: Dumping app01 public dns
   #   debug:
   #     msg: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
@@ -41,7 +45,7 @@
     student: # provided by provisioner
     app01_ip: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
     app02_ip: "{{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
-    elb_ip: "{{ elb_facts.elbs.0.dns_name }}"
+    #elb_ip: "{{ elb_facts.elbs.0.dns_name }}"
 
   tasks:
   - name: "Creating index.html for student: {{ team }}/{{ student }}"
