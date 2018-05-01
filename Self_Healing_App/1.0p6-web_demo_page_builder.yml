@@ -15,10 +15,13 @@
     elb_ip: # this will be retreived from host_)vars
 
   tasks:
-  - name: Dumping host_vars
+  - name: Dumping app01 public dns
     debug:
-      msg: "{{ hostvars[groups['tag_Name_student09_app01'][0]].ec2_dns_name }}"
-      #msg: "{{ hostvars }}"
+      msg: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
+
+  - name: Dumping app02 public dns
+    debug:
+      msg: "{{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
 
 
 - name: Building Initial Demo Page
