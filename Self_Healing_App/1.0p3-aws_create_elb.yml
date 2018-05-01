@@ -25,5 +25,5 @@
              instance_port: 80
        register: ec2_elb
 
-    - name: Dump ELB IP
-      debug: msg="elb facts are {{ ec2_elb.results }}"
+     - name: Dump ELB IP
+       debug: msg="elb facts are {{ ec2_elb.results }}"
