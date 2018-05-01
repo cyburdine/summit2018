@@ -1,7 +1,7 @@
 ---
 - name: Setting conditional vars
   debug:
-    msg="{{ host_vars }}"
+    msg: "{{ host_vars }}"
 
 
 - name: "Creating index.html for student: {{ team }}/{{ student }}"
@@ -10,4 +10,3 @@
     dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
     owner: apache
     group: apache
-  delagate_to: localhost
