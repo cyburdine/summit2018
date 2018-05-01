@@ -1,0 +1,8 @@
+---
+- name: "Creating index.html for student: {{ team }}/{{ student }}"
+  template:
+    src: templates/index.j2
+    dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
+    owner: apache
+    group: apache
+  delagate_to: localhost
