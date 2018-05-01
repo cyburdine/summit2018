@@ -11,10 +11,10 @@
     team: # provided by provisioner
     student: # provided by provisioner
     app01_ip: {{ ec2_public_dns_name }}
-    when: "{{ ec2_tag_Name }}" == '{{ student }} -app01'
+    when: "{{ ec2_tag_Name }}" == '{{ student }}-app01'
 
     app02_ip: {{ ec2_public_dns_name }}
-    when: "{{ ec2_tag_Name }}" == '{{ student }} -app02'
+    when: "{{ ec2_tag_Name }}" == '{{ student }}-app02'
 
     elb_ip: {{ ec2_public_dns_name }}
 
