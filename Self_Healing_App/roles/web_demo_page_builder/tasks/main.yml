@@ -4,9 +4,9 @@
     msg: "{{ host_vars }}"
 
 
-- name: "Creating index.html for student: {{ team }}/{{ student }}"
-  template:
-    src: templates/index.j2
-    dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
-    owner: apache
-    group: apache
+# - name: "Creating index.html for student: {{ team }}/{{ student }}"
+#   template:
+#     src: templates/index.j2
+#     dest: /tmp/demo_pages/{{ team }}/{{ student }}/index.html
+#     owner: apache
+#     group: apache
