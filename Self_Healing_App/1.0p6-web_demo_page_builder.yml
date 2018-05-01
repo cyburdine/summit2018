@@ -1,8 +1,6 @@
 ---
 - name: Building Initial Demo Page
-  hosts:
-    - tag_Name_{{ student }}_app01
-    - tag_Name_{{ student }}_app02
+  hosts: all
   gather_facts: False
   connection: local
 
@@ -12,9 +10,7 @@
     student: # provided by provisioner
     app01_ip: # this will be conditionally set in the role
     app02_ip: # this will be conditionally set in the role
-
-    elb_ip: {{ ec2_public_dns_name }}
-
+    elb_ip: # this will be retreived from host_)vars
 
   roles:
   - web_demo_page_builder
