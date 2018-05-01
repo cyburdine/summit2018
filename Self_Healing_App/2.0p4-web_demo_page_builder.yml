@@ -44,4 +44,4 @@
       group: apache
 
   - debug:
-      msg: "Please open your browswer to: http://" {{ elb_ip }} "/" {{ team }} "/" {{ student }}
+      msg: "Please open your browswer to: http://summitweb01-summitcflab-cbsgpwwx.srv.ravcloud.com/" {{ team }} "/" {{ student }}

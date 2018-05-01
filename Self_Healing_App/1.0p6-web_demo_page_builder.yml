@@ -2,10 +2,7 @@
 - name: Building Initial Demo Page
   hosts:
     - demoweb
-    # - tag_Name_{{ student }}_app01
-    # - tag_Name_{{ student }}_app02
   gather_facts: False
-#  connection: local
 
   vars:
     ansible_tower_ip: # this is set in Tower Inventory
