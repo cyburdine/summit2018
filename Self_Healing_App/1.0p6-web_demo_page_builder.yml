@@ -41,5 +41,6 @@
       owner: apache
       group: apache
 
+
   - debug:
-      msg: "{{ elb_ip }}"
+    msg: "Please open your browswer to: http://summitweb01-summitcflab-cbsgpwwx.srv.ravcloud.com/" {{ team }} "/" {{ student }}

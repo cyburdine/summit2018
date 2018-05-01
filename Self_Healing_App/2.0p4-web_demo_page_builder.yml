@@ -11,7 +11,6 @@
     student: # provided by provisioner
     elb_name: "{{ student }}-elb"
     app01_ip: "{{ hostvars[groups['tag_Name_' + student + '_app01'][0]].ec2_dns_name }}"
-    app02_ip: "{{ hostvars[groups['tag_Name_' + student + '_app02'][0]].ec2_dns_name }}"
     app03_ip: "{{ hostvars[groups['tag_Name_' + student + '_app03'][0]].ec2_dns_name }}"
 
   tasks:

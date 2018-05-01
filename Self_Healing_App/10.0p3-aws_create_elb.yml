@@ -1,0 +1,35 @@
+---
+- name: Create new EC2 ELB
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+    elb_name: "{{ student }}-elb"
+
+  tasks:
+     - name: Provision application load balancer
+       ec2_elb_lb:
+         name: "{{ elb_name }}"
+         state: present
+         region: us-west-1
+         validate_certs: no
+         # subnets:
+         #   - subnet-23ec8c78
+         zones:
+           - us-west-1a
+           - us-west-1c
+         listeners:
+           - protocol: http # options are http, https, ssl, tcp
+             load_balancer_port: 80
+             instance_port: 80
+       register: ec2_elb
+
+     - name: Dump ELB IP
+       elb_classic_lb_facts:
+         names: "{{ elb_name }}"
+         region: us-west-1
+       register: elb_facts
+
+     - debug:
+         msg: "{{ elb_facts.elbs.0.dns_name }}"
