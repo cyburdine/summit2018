@@ -4,6 +4,10 @@
     dir: 'vars'
     extensions: ['yml']
 
+- name: "Determine proper Ansible Tower server"
+  set_fact:
+    ansible_tower_ip: "{{ towers[team].ansible_tower_ip }}"
+
 - name: Job Template to launch a Workflow Job Template
   uri:
     url: https://{{ ansible_tower_ip }}/api/v1/workflow_job_templates/{{ workflow_job_template_id }}/launch/
