@@ -1,0 +1,20 @@
+---
+towers:
+  teama:
+    zone_1: us-west-1a
+    zone_2: us-west-1c
+  teamb:
+    zone_1: us-west-1a
+    zone_2: us-west-1b
+  teamc:
+    zone_1: us-west-1a
+    zone_2: us-west-1c
+  teamd:
+    zone_1: us-west-1a
+    zone_2: us-west-1b
+  teame:
+    zone_1: us-west-1a
+    zone_2: us-west-1c
+  teamf:
+    zone_1: us-west-1b
+    zone_2: us-west-1c
