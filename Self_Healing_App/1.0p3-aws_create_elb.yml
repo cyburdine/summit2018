@@ -16,7 +16,7 @@
          validate_certs: no
          # subnets:
          #   - subnet-23ec8c78
-         # zones:
+         zones:
             - us-west-1a
             - us-west-1b
             - us-west-1c
