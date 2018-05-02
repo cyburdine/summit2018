@@ -17,8 +17,9 @@
          # subnets:
          #   - subnet-23ec8c78
          # zones:
-         #   - us-west-1a
-         #   - us-west-1c
+            - us-west-1a
+            - us-west-1b
+            - us-west-1c
          listeners:
            - protocol: http # options are http, https, ssl, tcp
              load_balancer_port: 80
