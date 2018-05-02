@@ -19,6 +19,7 @@
         vpc_subnet_id: "{{ vpc_subnet }}"
         region: "{{ region }}"
         state: absent
+      ignore_errors: yes
 
     - name: Removing load balancer
       ec2_elb_lb:
