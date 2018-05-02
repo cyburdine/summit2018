@@ -1,0 +1,14 @@
+---
+towers:
+  teama:
+    ansible_tower_ip: 10.0.10.11
+  teamb:
+    ansible_tower_ip: 10.0.10.12
+  teamc:
+    ansible_tower_ip: 10.0.10.13
+  teamd:
+    ansible_tower_ip: 10.0.10.14
+  teame:
+    ansible_tower_ip: 10.0.10.15
+  teamf:
+    ansible_tower_ip: 10.0.10.16
