@@ -10,7 +10,7 @@
     elb_name: "{{ student }}-elb"
 
   tasks:
-    - name: Add host to ELB
+    - name: Adding hosts to AWS ELB
       local_action:
         module: ec2_elb
         ec2_region: us-west-1
