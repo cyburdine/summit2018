@@ -41,6 +41,5 @@
       owner: apache
       group: apache
 
-
   - debug:
       msg: "Please open your browswer to: http://demo.rh.tips/{{ team }}/{{ student }}"
